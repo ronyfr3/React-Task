@@ -1,0 +1,40 @@
+@mixin flex($dir, $align, $content) {
+  display: flex;
+  flex-direction: $dir;
+  align-items: $align;
+  justify-content: $content;
+}
+
+@mixin btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: #009ccb;
+  padding: 9px 20px 9px 20px;
+  border-radius: 4px;
+  color: white;
+  margin: 0.2rem;
+  text-transform: capitalize;
+}
+@mixin btn2 {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: #232a2c;
+  padding: 9px 20px 9px 20px;
+  border-radius: 4px;
+  color: white;
+  margin: 0.2rem;
+  text-transform: capitalize;
+}
+@mixin btn3 {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: #cb7a00;
+  padding: 9px 20px 9px 20px;
+  border-radius: 4px;
+  color: white;
+  margin: 0.2rem;
+  text-transform: capitalize;
+}

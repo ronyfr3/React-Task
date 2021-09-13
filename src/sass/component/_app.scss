@@ -1,0 +1,4 @@
+.app {
+  @include flex(column, center, center);
+  margin: 5em auto;
+}
