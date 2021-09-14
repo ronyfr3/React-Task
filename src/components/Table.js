@@ -1,6 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getData } from "../redux/actions/data";
+import Modal from "./Modal";
 
 const Table = () => {
   //INITIALIZE_DISPATCH
@@ -15,6 +16,16 @@ const Table = () => {
 
   //GENERATE DATA IF FILTERED STATE EMPTY
   const info = state.length <= 0 ? state2 : state;
+
+  // MODALfn
+  const [open, setOpen] = useState(false);
+  const [open2, setOpen2] = useState(false);
+  const openModal = () => {
+    setOpen(true);
+  };
+  const openModal2 = () => {
+    setOpen2(true);
+  };
   return (
     <div className="table_wrapper">
       <table>
@@ -29,7 +40,7 @@ const Table = () => {
           </tr>
         </thead>
         <tbody>
-          {info?.map((x) => {
+          {info?.map((x, i) => {
             const {
               name,
               availability,
@@ -39,7 +50,7 @@ const Table = () => {
               needing_repair,
             } = x;
             return (
-              <tr>
+              <tr key={i}>
                 <td>{name}</td>
                 <td>{code}</td>
                 <td>{availability ? "true" : "false"}</td>
@@ -52,8 +63,14 @@ const Table = () => {
         </tbody>
       </table>
       <div className="btn_container">
-        <button className="btn1">Book</button>
-        <button className="btn2">Return</button>
+        <button className="btn1" onClick={openModal}>
+          Book
+        </button>
+        {open && <Modal setOpen={setOpen} validate="book" />}
+        <button className="btn2" onClick={openModal2}>
+          Return
+        </button>
+        {open2 && <Modal setOpen={setOpen2} validate="return" />}
       </div>
     </div>
   );

@@ -128,4 +128,115 @@ form button {
   margin: 0.2rem;
   text-transform: capitalize;
 }
+
+.modal_wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: white;
+  -webkit-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  width: 380px;
+  height: 250px;
+  border-radius: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.modal_wrapper h3 {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  color: #3f3e3e;
+}
+
+.modal_wrapper select {
+  padding: 0.4rem;
+}
+
+.modal_wrapper .inputField {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.modal_wrapper .inputField input {
+  margin: 0.3rem;
+}
+
+.modal_wrapper .confirm {
+  position: absolute;
+  right: 1em;
+  bottom: 1.5em;
+}
+
+.modal_wrapper .confirm span {
+  margin: 1rem;
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.modalmsg_wrapper {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 50%);
+          transform: translate(-50%, 50%);
+  background-color: white;
+  -webkit-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  width: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.modalmsg_wrapper .details {
+  width: 100%;
+  margin: 2.5rem;
+}
+
+.modalmsg_wrapper .details h3 {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  color: #3f3e3e;
+}
 /*# sourceMappingURL=main.css.map */
