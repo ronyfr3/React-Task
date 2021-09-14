@@ -6,7 +6,7 @@ const SearchFilter = () => {
   const [search, setSearch] = useState("");
   const state = useSelector((state) => state.data.data);
   const data = state
-    .filter((x) => {
+    ?.filter((x) => {
       if (search === "") {
         return x;
       } else if (x.name.toLowerCase().includes(search.toLowerCase())) {

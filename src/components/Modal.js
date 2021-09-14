@@ -7,9 +7,9 @@ const Modal = ({ ...arg }) => {
   const state = useSelector((state) => state.filteredData.data);
   const state2 = useSelector((state) => state.data.data);
   //GENERATE DATA IF FILTERED STATE EMPTY
-  const info = state.length <= 0 ? state2 : state;
+  const info = state?.length <= 0 ? state2 : state;
   //   DROPDOWN STATE
-  const [dropdown, setDropdown] = useState(info[0]?.name);
+  const [dropdown, setDropdown] = useState(info?.[0]?.name);
   //DATEPICKER STATE
   const [from, setFrom] = useState("");
   const [to, setTo] = useState("");
@@ -37,11 +37,11 @@ const Modal = ({ ...arg }) => {
   };
   // LOGIC TO JUSTIFY IF ONE's ABLE TO RENT
   //user can only rent product longer than the minimum rental period
-  const product = info.filter((x) => x.name === dropdown);
+  const product = info?.filter((x) => x.name === dropdown);
   console.log(product);
-  const price = product[0]?.price;
-  const rentalPeriod = product[0]?.minimum_rent_period;
-  const usedMileage = product[0]?.mileage;
+  const price = product?.[0]?.price;
+  const rentalPeriod = product?.[0]?.minimum_rent_period;
+  const usedMileage = product?.[0]?.mileage;
   const [discount, SetDiscount] = useState(false);
   useEffect(() => {
     if (rentalPeriod < date) {

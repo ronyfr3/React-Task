@@ -9,13 +9,14 @@ const Table = () => {
   //REDUX_STATE
   const state = useSelector((state) => state.filteredData.data);
   const state2 = useSelector((state) => state.data.data);
+  console.log(state2);
   //DISPATCHING ACTION
   useEffect(() => {
     dispatch(getData());
   }, [dispatch]);
 
   //GENERATE DATA IF FILTERED STATE EMPTY
-  const info = state.length <= 0 ? state2 : state;
+  const info = state?.length <= 0 ? state2 : state;
 
   // MODALfn
   const [open, setOpen] = useState(false);
