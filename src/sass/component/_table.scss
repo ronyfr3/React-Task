@@ -1,3 +1,4 @@
+
 .table_wrapper {
   @include flex(column, center, center);
   margin: 1em 0;
@@ -5,21 +6,24 @@
   table {
     width: 50%;
     border-spacing: 0;
-    border: 1px solid gray;
-    border-radius: 4px;
+    border-collapse: collapse;
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
     tr:last-child {
       td {
         border-bottom: 0;
       }
     }
-
+    tr:nth-child(odd) {
+      background-color: #f2f2f2;
+    }
+    th {
+      background-color: white;
+    }
     th,
     td {
       margin: 0;
-      text-align: center;
-      padding: 0.1rem 0.1rem;
-      border-bottom: 1px solid gray;
-      border-right: 1px solid gray;
+      text-align: left;
+      padding: 1rem;
       &:last-child {
         border-right: 0;
       }
@@ -32,6 +36,43 @@
     }
     .btn2 {
       @include btn3;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    table {
+      border: 0;
+      width: 80%;
+      box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
+    }
+    th {
+      display: none;
+    }
+    table thead {
+      border: none;
+      overflow: hidden;
+      padding: 0;
+    }
+    table tr {
+      display: block;
+      margin-bottom: 0.625em;
+      margin: 0 0 1rem 0;
+    }
+    table td {
+      display: block;
+      font-size: 0.8em;
+      text-align: right;
+      &:nth-child(-n) {
+        background-color: #efebeb;
+      }
+    }
+    table td::before {
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    table td:last-child {
+      border-bottom: 0;
     }
   }
 }

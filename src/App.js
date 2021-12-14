@@ -5,7 +5,7 @@ import "./sass/main.scss";
 const App = () => {
   return (
     <div className="app">
-      <SearchFilter />
+      {/* <SearchFilter /> */}
       <Table />
     </div>
   );
