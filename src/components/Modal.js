@@ -14,6 +14,7 @@ const Modal = ({ ...arg }) => {
   const [from, setFrom] = useState("");
   const [to, setTo] = useState("");
   const [date, setDate] = useState();
+  console.log('date',date);
   //CALCULATE DAYS
   const getNumberOfDays = (start, end) => {
     const date1 = new Date(start);

@@ -9,11 +9,11 @@ export const COLUMNS = [
     },
     {
       Header: 'Availability',
-      accessor: 'availability',
+      accessor: (row) => row.availability===true?"true":"false",
     },
     {
       Header: 'Need To Repair',
-      accessor: 'needing_repair',
+      accessor: (row) => row.needing_repair===true?"true":"false",
     },
     {
         Header: 'Durability',
@@ -21,6 +21,6 @@ export const COLUMNS = [
       },
     {
       Header: 'Mileage',
-      accessor: 'mileage',
+      accessor:(row)=>row.mileage===null?"null":row.mileage,
     },
   ];

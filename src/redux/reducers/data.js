@@ -6,7 +6,7 @@ import {
   FILTERED_LIST_FAIL,
 } from "../constants/actionType";
 
-//REDUCER_fn
+//REDUCER_FUNCTION
 export const data = (state = { loading: true, data: [] }, action) => {
   switch (action.type) {
     case DATA_LIST_REQUEST:
@@ -14,19 +14,21 @@ export const data = (state = { loading: true, data: [] }, action) => {
     case DATA_LIST_SUCCESS:
       return { loading: false, data: action.payload };
     case DATA_LIST_FAIL:
-      return { loading: false, error: action.payload };
+      return { loading: false, error: "something wrong" };
     default:
       return state;
   }
 };
 
-//REDUCER_fn
-export const filteredData = (state = { data: [] }, action) => {
+//REDUCER_FUNCTION
+export const confirmData = (state = { datas: [] }, action) => {
   switch (action.type) {
     case FILTERED_LIST_SUCCESS:
-      return { data: action.payload };
+      return { 
+        datas:[...state.datas,action.payload]
+       };
     case FILTERED_LIST_FAIL:
-      return { error: action.payload };
+      return { error: "something wrong" };
     default:
       return state;
   }

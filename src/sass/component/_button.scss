@@ -1,0 +1,28 @@
+.btn_container{
+  @include flex(row,center,center);
+  gap:2rem;
+  .btn2{
+    border: 1px solid red;
+    outline: none;
+    cursor: pointer;
+    padding: 9px 20px 9px 20px;
+    border-radius: 4px;
+    color: red;
+    background-color:white;
+    margin: 0.2rem;
+    text-transform: capitalize;
+    box-shadow:0 0 1px 1px rgba(0,0,0,0.2);
+  }
+  .btn1{
+    border: 1px solid green;
+    outline: none;
+    cursor: pointer;
+    padding: 9px 20px 9px 20px;
+    border-radius: 4px;
+    color: green;
+    background-color:white;
+    margin: 0.2rem;
+    text-transform: capitalize;
+    box-shadow:0 0 1px 1px rgba(0,0,0,0.2);
+  }
+}
